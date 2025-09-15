@@ -1,17 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Website</title>
-
-  <link rel="stylesheet" href="style.css">
-  <!-- This code above links the style.css file-->
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ogawa Matcha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;600&family=Merienda:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hello, World!</h1>
-  <p>This is my first website.</p>
+  <header>
+    <div class="logo-jp">小川抹茶</div>
+    <button class="hamburger" aria-controls="site-menu" aria-expanded="false" aria-label="Open menu">☰</button>
+
+    <nav class="site-menu" id="site-menu" aria-hidden="true">
+      <ul>
+        <li><a class="menu-link" href="#hero" data-key="about-intro">About</a></li>
+        <li><a class="menu-link" href="#products" data-key="products-title">Products</a></li>
+        <li><a class="menu-link" href="matcha-leaves.html" data-key="product1-title">Matcha</a></li>
+        <li><a class="menu-link" href="matcha-kit.html" data-key="product2-title">Tea Kits</a></li>
+        <li><a class="menu-link" href="events.html">Events</a></li>
+
+        <li class="has-submenu">
+          <button class="submenu-toggle" aria-expanded="false" aria-controls="lang-list">🌐 Language ▸</button>
+          <ul class="submenu" id="lang-list" role="menu" aria-hidden="true">
+            <li class="lang-option" data-lang="en" role="menuitem">
+              <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" width="20" height="15" alt="US flag" class="flag"> English
+            </li>
+            <li class="lang-option" data-lang="ja" role="menuitem">
+              <img src="https://flagcdn.com/w20/jp.png" srcset="https://flagcdn.com/w40/jp.png 2x" width="20" height="15" alt="Japan flag" class="flag"> 日本語
+            </li>
+            <li class="lang-option" data-lang="zh" role="menuitem">
+              <img src="https://flagcdn.com/w20/cn.png" srcset="https://flagcdn.com/w40/cn.png 2x" width="20" height="15" alt="China flag" class="flag"> 中文
+            </li>
+          </ul>
+        </li>
+
+        <li><a class="menu-link" href="#contact" data-key="contact-title">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero fade-on-scroll">
+      <h1 data-key="hero-title">Ogawa Matcha</h1>
+      <p data-key="hero-text">Authentic Japanese matcha, sourced from Kyoto’s finest tea fields.</p>
+      <img src="https://source.unsplash.com/1200x600/?matcha,green,tea" alt="Matcha hero" loading="lazy">
+    </section>
+
+    <section id="about" class="about fade-on-scroll">
+      <img src="https://source.unsplash.com/1200x600/?tea,plantation" alt="Tea fields" loading="lazy">
+      <h2 data-key="about-intro">Our Story</h2>
+      <p data-key="about-story1">Ogawa Matcha began as a small passion project among friends who grew up near Kyoto’s terraced tea fields.</p>
+      <p data-key="about-story2">Today, we work with farmers who use time-honored cultivation and stone-grinding techniques to preserve flavor and color.</p>
+      <p data-key="about-story3">From seed to cup — a mindful, careful journey intended to bring quiet luxury to your day.</p>
+    </section>
+
+    <section id="products" class="products fade-on-scroll">
+      <h2 data-key="products-title">Products</h2>
+      <div class="product-grid">
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?matcha,bowl" alt="Matcha" loading="lazy">
+          <h3 data-key="product1-title">Matcha</h3>
+          <p data-key="product1-text">Ceremonial + culinary matcha — vibrant green, rich umami.</p>
+          <a class="btn" href="matcha-leaves.html">Explore</a>
+        </article>
+
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?matcha,tools" alt="Tea Kit" loading="lazy">
+          <h3 data-key="product2-title">Tea Kits</h3>
+          <p data-key="product2-text">Complete kits including chawan, chasen, and chashaku — ready for home ritual.</p>
+          <a class="btn" href="matcha-kit.html">Explore</a>
+        </article>
+
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?tea,ceremony" alt="Events" loading="lazy">
+          <h3 data-key="product3-title">Upcoming Events</h3>
+          <p data-key="product3-text">Tastings, workshops, and seasonal tea ceremonies — RSVP when available.</p>
+          <a class="btn" href="events.html">See Events</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact fade-on-scroll">
+      <h2 data-key="contact-title">Contact Us</h2>
+      <p data-key="contact-text">Have any questions? Reach out anytime.</p>
+
+      <form id="contact-form" action="https://formspree.io/f/mjkbgnan" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="hidden" name="_to" value="paulggreene03@gmail.com">
+        <button type="submit" data-key="contact-btn">Email Us</button>
+      </form>
+
+      <div id="form-response" class="form-response" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ogawa Matcha. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

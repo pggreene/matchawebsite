@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tea Kits — Ogawa Matcha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;600&family=Merienda:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-jp">小川抹茶</div>
+    <button class="hamburger" aria-controls="site-menu" aria-expanded="false">☰</button>
+
+    <nav class="site-menu" id="site-menu" aria-hidden="true">
+      <ul>
+        <li><a class="menu-link" href="index.html">Home</a></li>
+        <li><a class="menu-link" href="matcha-leaves.html" data-key="matcha-page-title">Matcha</a></li>
+        <li><a class="menu-link" href="matcha-kit.html" data-key="kit-page-title">Tea Kits</a></li>
+        <li><a class="menu-link" href="events.html" data-key="events-page-title">Events</a></li>
+
+        <li class="has-submenu">
+          <button class="submenu-toggle" aria-expanded="false">🌐 Language ▸</button>
+          <ul class="submenu" id="lang-list" role="menu" aria-hidden="true">
+            <li class="lang-option" data-lang="en"><img class="flag" src="https://flagcdn.com/w20/us.png" width="20" height="15"> English</li>
+            <li class="lang-option" data-lang="ja"><img class="flag" src="https://flagcdn.com/w20/jp.png" width="20" height="15"> 日本語</li>
+            <li class="lang-option" data-lang="zh"><img class="flag" src="https://flagcdn.com/w20/cn.png" width="20" height="15"> 中文</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="products">
+    <section class="fade-on-scroll">
+      <h1 data-key="kit-page-title">Matcha Tea Kits</h1>
+      <p data-key="kit-intro">Everything you need to prepare premium matcha at home.</p>
+
+      <div class="product-grid">
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?matcha,chawan" alt="Chawan" loading="lazy">
+          <h3 data-key="kit1-title">Chawan (Tea Bowl)</h3>
+          <p data-key="kit1-text">Handcrafted bowls shaped for whisking and sipping.</p>
+        </article>
+
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?matcha,chasen" alt="Chasen" loading="lazy">
+          <h3 data-key="kit2-title">Chasen (Bamboo Whisk)</h3>
+          <p data-key="kit2-text">A bamboo whisk that creates a smooth, frothy texture.</p>
+        </article>
+
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?matcha,chashaku" alt="Chashaku" loading="lazy">
+          <h3 data-key="kit3-title">Chashaku (Bamboo Scoop)</h3>
+          <p data-key="kit3-text">Traditional scoop for measuring the perfect portion.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

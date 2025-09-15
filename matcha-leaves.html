@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Matcha — Ogawa Matcha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;600&family=Merienda:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-jp">小川抹茶</div>
+    <button class="hamburger" aria-controls="site-menu" aria-expanded="false">☰</button>
+
+    <nav class="site-menu" id="site-menu" aria-hidden="true">
+      <ul>
+        <li><a class="menu-link" href="index.html">Home</a></li>
+        <li><a class="menu-link" href="matcha-leaves.html" data-key="matcha-page-title">Matcha</a></li>
+        <li><a class="menu-link" href="matcha-kit.html" data-key="kit-page-title">Tea Kits</a></li>
+        <li><a class="menu-link" href="events.html" data-key="events-page-title">Events</a></li>
+
+        <li class="has-submenu">
+          <button class="submenu-toggle" aria-expanded="false">🌐 Language ▸</button>
+          <ul class="submenu" id="lang-list" role="menu" aria-hidden="true">
+            <li class="lang-option" data-lang="en"><img class="flag" src="https://flagcdn.com/w20/us.png" width="20" height="15"> English</li>
+            <li class="lang-option" data-lang="ja"><img class="flag" src="https://flagcdn.com/w20/jp.png" width="20" height="15"> 日本語</li>
+            <li class="lang-option" data-lang="zh"><img class="flag" src="https://flagcdn.com/w20/cn.png" width="20" height="15"> 中文</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="products">
+    <section class="fade-on-scroll">
+      <h1 data-key="matcha-page-title">Our Matcha</h1>
+      <p data-key="matcha-intro">Three signature grades to match your mood.</p>
+
+      <div class="product-grid">
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?matcha,calm" alt="Tranquil Matcha" loading="lazy">
+          <h3 data-key="matcha1-title">Tranquil Blend</h3>
+          <p data-key="matcha1-text">Smooth and lightly sweet — perfect for evening relaxation.</p>
+        </article>
+
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?matcha,energy" alt="Energy Matcha" loading="lazy">
+          <h3 data-key="matcha2-title">Energy Boost</h3>
+          <p data-key="matcha2-text">Bright and bold — an uplifting morning ritual.</p>
+        </article>
+
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?matcha,focus" alt="Focus Matcha" loading="lazy">
+          <h3 data-key="matcha3-title">Clarity Focus</h3>
+          <p data-key="matcha3-text">Balanced umami for clear mind and focused work.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
