@@ -10,7 +10,19 @@
 <body>
   <header>
     <div class="logo-jp">小川抹茶</div>
-    <button class="hamburger" aria-controls="site-menu" aria-expanded="false">☰</button>
+    <div class="header-icons">
+      <div class="profile-wrap">
+        <div class="profile-label">Account</div>
+        <div class="profile-dropdown"></div>
+      </div>
+
+      <button class="icon-btn icon-cart" title="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6h15l-1.5 9h-12z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="icon-badge" style="display:none">0</span>
+      </button>
+
+      <button class="hamburger" aria-controls="site-menu" aria-expanded="false">☰</button>
+    </div>
 
     <nav class="site-menu" id="site-menu" aria-hidden="true">
       <ul>
@@ -19,17 +31,40 @@
         <li><a class="menu-link" href="matcha-kit.html" data-key="kit-page-title">Tea Kits</a></li>
         <li><a class="menu-link" href="events.html" data-key="events-page-title">Events</a></li>
 
-        <li class="has-submenu">
-          <button class="submenu-toggle" aria-expanded="false">🌐 Language ▸</button>
-          <ul class="submenu" id="lang-list" role="menu" aria-hidden="true">
-            <li class="lang-option" data-lang="en"><img class="flag" src="https://flagcdn.com/w20/us.png" width="20" height="15"> English</li>
-            <li class="lang-option" data-lang="ja"><img class="flag" src="https://flagcdn.com/w20/jp.png" width="20" height="15"> 日本語</li>
-            <li class="lang-option" data-lang="zh"><img class="flag" src="https://flagcdn.com/w20/cn.png" width="20" height="15"> 中文</li>
+        <li>
+          <div class="submenu-label">Languages</div>
+          <ul id="languages-submenu">
+            <li class="lang-option" data-lang="en"><img class="flag" src="https://flagcdn.com/w20/us.png"> English</li>
+            <li class="lang-option" data-lang="ja"><img class="flag" src="https://flagcdn.com/w20/jp.png"> 日本語</li>
+            <li class="lang-option" data-lang="zh"><img class="flag" src="https://flagcdn.com/w20/cn.png"> 中文</li>
+            <li class="lang-option" data-lang="es"><img class="flag" src="https://flagcdn.com/w20/es.png"> Español</li>
           </ul>
         </li>
       </ul>
     </nav>
   </header>
+
+  <div class="top-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-heading" data-key="about-intro">About</a></li>
+      <li><a href="matcha-leaves.html" class="nav-heading" data-key="matcha-page-title">Matcha</a></li>
+      <li><a href="matcha-kit.html" class="nav-heading" data-key="kit-page-title">Tea Kits</a></li>
+      <li><a href="events.html" class="nav-heading" data-key="events-page-title">Events</a></li>
+
+      <li class="nav-item">
+        <div class="nav-heading languages-heading">Languages ▾</div>
+        <ul class="languages-submenu">
+          <li class="lang-option" data-lang="en"><img class="flag" src="https://flagcdn.com/w20/us.png"> English</li>
+          <li class="lang-option" data-lang="ja"><img class="flag" src="https://flagcdn.com/w20/jp.png"> 日本語</li>
+          <li class="lang-option" data-lang="zh"><img class="flag" src="https://flagcdn.com/w20/cn.png"> 中文</li>
+          <li class="lang-option" data-lang="es"><img class="flag" src="https://flagcdn.com/w20/es.png"> Español</li>
+        </ul>
+      </li>
+
+      <li><a href="index.html#contact" class="nav-heading" data-key="contact-title">Contact</a></li>
+    </ul>
+    <div style="width:140px"></div>
+  </div>
 
   <main class="products">
     <section class="fade-on-scroll">
@@ -57,6 +92,10 @@
       </div>
     </section>
   </main>
+
+  <!-- shared modal & cart -->
+  <div id="profile-modal"></div>
+  <aside id="cart-panel"></aside>
 
   <script src="script.js"></script>
 </body>
