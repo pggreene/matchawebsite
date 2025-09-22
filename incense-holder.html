@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Incense Holders — Kōdō Incense</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;600&family=Merienda:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-jp">香道&nbsp;<span class="brand-en">Kōdō Incense</span></div>
+    <div class="header-icons">
+      <div class="profile-wrap"><div class="profile-label">Account</div><div class="profile-dropdown"></div></div>
+      <button class="icon-btn icon-cart" title="Cart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cart</span><span class="icon-badge" style="display:none">0</span></button>
+      <button class="hamburger" aria-controls="site-menu" aria-expanded="false">☰</button>
+    </div>
+
+    <nav class="site-menu" id="site-menu" aria-hidden="true">
+      <ul>
+        <li><a class="menu-link" href="index.html">Home</a></li>
+        <li><a class="menu-link" href="incense-sticks.html" data-key="product-sticks">Incense Sticks</a></li>
+        <li><a class="menu-link" href="incense-cones.html" data-key="product-cones">Incense Cones</a></li>
+        <li><a class="menu-link" href="incense-holders.html" data-key="product-holders">Incense Holders</a></li>
+        <li><a class="menu-link" href="gift-sets.html" data-key="product-gifts">Gift Sets</a></li>
+
+        <li>
+          <div class="submenu-label">Languages</div>
+          <ul id="languages-submenu">
+            <li class="lang-option" data-lang="en"><img class="flag" src="https://flagcdn.com/w20/us.png"> English</li>
+            <li class="lang-option" data-lang="ja"><img class="flag" src="https://flagcdn.com/w20/jp.png"> 日本語</li>
+            <li class="lang-option" data-lang="zh"><img class="flag" src="https://flagcdn.com/w20/cn.png"> 中文</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="top-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-heading" data-key="about-intro">Our Story</a></li>
+      <li><a href="incense-sticks.html" class="nav-heading" data-key="product-sticks">Incense Sticks</a></li>
+      <li><a href="incense-cones.html" class="nav-heading" data-key="product-cones">Incense Cones</a></li>
+      <li><a href="incense-holders.html" class="nav-heading" data-key="product-holders">Incense Holders</a></li>
+      <li><a href="gift-sets.html" class="nav-heading" data-key="product-gifts">Gift Sets</a></li>
+
+      <li class="nav-item">
+        <div class="nav-heading languages-heading">Languages ▾</div>
+        <ul class="languages-submenu">
+          <li class="lang-option" data-lang="en"><img class="flag" src="https://flagcdn.com/w20/us.png"> English</li>
+          <li class="lang-option" data-lang="ja"><img class="flag" src="https://flagcdn.com/w20/jp.png"> 日本語</li>
+          <li class="lang-option" data-lang="zh"><img class="flag" src="https://flagcdn.com/w20/cn.png"> 中文</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <main class="products">
+    <section class="fade-on-scroll" style="padding-top:28px">
+      <p><a href="index.html" style="text-decoration:none;color:var(--dark-green);font-weight:700;">← Back to Home</a></p>
+
+      <h1 data-key="product-holders">Incense Holders</h1>
+      <p data-key="product-holders-desc">Ceramic and wooden holders crafted by artisans.</p>
+
+      <div class="product-grid">
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?ceramic,incense" alt="Ceramic holder" loading="lazy">
+          <h3>Ceramic Holder</h3>
+          <p>Hand-thrown ceramic holder — elegant and minimal, great for both sticks and cones.</p>
+        </article>
+
+        <article class="product-card fade-on-scroll">
+          <img src="https://source.unsplash.com/400x300/?wood,craft" alt="Wooden holder" loading="lazy">
+          <h3>Wooden Holder</h3>
+          <p>Warm wooden holder carved by artisans — pairs beautifully with woody blends.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="profile-modal"></div>
+  <aside id="cart-panel"></aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Incense Sticks — Kōdō Incense</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;600&family=Merienda:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-jp">香道&nbsp;<span class="brand-en">Kōdō Incense</span></div>
+    <div class="header-icons">
+      <div class="profile-wrap">
+        <div class="profile-label">Account</div>
+        <div class="profile-dropdown" aria-hidden="true"></div>
+      </div>
+
+      <button class="icon-btn icon-cart" title="Cart" aria-label="Open cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Cart</span>
+        <span class="icon-badge" style="display:none">0</span>
+      </button>
+
+      <button class="hamburger" aria-controls="site-menu" aria-expanded="false" aria-label="Open menu">☰</button>
+    </div>
+
+    <nav class="site-menu" id="site-menu" aria-hidden="true">
+      <ul>
+        <li><a class="menu-link" href="index.html">Home</a></li>
+        <li><a class="menu-link" href="incense-sticks.html" data-key="product-sticks">Incense Sticks</a></li>
+        <li><a class="menu-link" href="incense-kits.html" data-key="product-kits">Kits</a></li>
+        <li><a class="menu-link" href="incense-holders.html" data-key="product-holders">Holdings & Holders</a></li>
+
+        <li>
+          <div class="submenu-label">Languages</div>
+          <ul id="languages-submenu">
+            <li class="lang-option" data-lang="en"><img class="flag" src="https://flagcdn.com/w20/us.png" alt="US flag"> English</li>
+            <li class="lang-option" data-lang="ja"><img class="flag" src="https://flagcdn.com/w20/jp.png" alt="JP flag"> 日本語</li>
+            <li class="lang-option" data-lang="zh"><img class="flag" src="https://flagcdn.com/w20/cn.png" alt="CN flag"> 中文</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="top-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-heading" data-key="about-intro">Our Story</a></li>
+      <li><a href="incense-sticks.html" class="nav-heading" data-key="product-sticks">Incense Sticks</a></li>
+      <li><a href="incense-kits.html" class="nav-heading" data-key="product-kits">Kits</a></li>
+      <li><a href="incense-holders.html" class="nav-heading" data-key="product-holders">Holdings & Holders</a></li>
+
+      <li class="nav-item">
+        <div class="nav-heading languages-heading">Languages ▾</div>
+        <ul class="languages-submenu">
+          <li class="lang-option" data-lang="en"><img class="flag" src="https://flagcdn.com/w20/us.png" alt="US flag"> English</li>
+          <li class="lang-option" data-lang="ja"><img class="flag" src="https://flagcdn.com/w20/jp.png" alt="JP flag"> 日本語</li>
+          <li class="lang-option" data-lang="zh"><img class="flag" src="https://flagcdn.com/w20/cn.png" alt="CN flag"> 中文</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <main class="products">
+    <section class="fade-on-scroll" style="padding-top:28px">
+      <p><a href="index.html" style="text-decoration:none;color:var(--dark-green);font-weight:700;">← Back to Home</a></p>
+
+      <h1 data-key="product-sticks">Incense Sticks</h1>
+      <p data-key="product-sticks-desc">Hand-blended stick incense for ritual and everyday moments.</p>
+
+      <div class="product-grid">
+        <article class="product-card fade-on-scroll">
+          <img src="https://images.unsplash.com/photo-1512295767273-acb3f7dbf9f0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a2f6c5d2ea5e68a5b9a14dbfd7f6a1b" alt="Calm Sandalwood" loading="lazy">
+          <h3>Calm — Sandalwood Stick</h3>
+          <p>Warm, grounding sandalwood with soft floral notes. Best for evening reflection.</p>
+          <button class="btn add-to-cart" data-sku="stick-calm" data-name="Calm — Sandalwood Stick" data-price="12">Add to cart — $12</button>
+        </article>
+
+        <article class="product-card fade-on-scroll">
+          <img src="https://images.unsplash.com/photo-1526312426976-31d2b6a7b6b5?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7aebf6d1dfd2a1b8ada3b5b4e1a8b5f4" alt="Energy Agarwood" loading="lazy">
+          <h3>Energy — Agarwood Stick</h3>
+          <p>Bright woody aroma to gently awaken the senses. Ideal for morning focus.</p>
+          <button class="btn add-to-cart" data-sku="stick-energy" data-name="Energy — Agarwood Stick" data-price="14">Add to cart — $14</button>
+        </article>
+
+        <article class="product-card fade-on-scroll">
+          <img src="https://images.unsplash.com/photo-1505765053174-6d9a6daa1b11?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1f1d5b3a8b7b9d3cde6f3d8a6c4b4a60" alt="Clarity Floral" loading="lazy">
+          <h3>Clarity — Floral Stick</h3>
+          <p>Light florals with a clean finish for calm concentration during work or study.</p>
+          <button class="btn add-to-cart" data-sku="stick-clarity" data-name="Clarity — Floral Stick" data-price="11">Add to cart — $11</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="profile-modal"></div>
+  <aside id="cart-panel"></aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

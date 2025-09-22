@@ -20,7 +20,7 @@ body{
   line-height:1.6;
 }
 
-/* HEADER - green top bar */
+/* HEADER - green top bar (logo always visible here) */
 header{
   position:fixed; top:0; left:0; right:0;
   height:var(--header-height);
@@ -36,23 +36,25 @@ header{
   color:var(--dark-green);
   font-size:1.25rem;
 }
+.brand-en{ font-weight:600; font-size:0.9rem; color:rgba(0,0,0,0.6); margin-left:8px; }
 
 /* header icons (kept only in green header) */
 .header-icons{ display:flex; gap:12px; align-items:center; }
-.icon-btn{ background:none; border:none; cursor:pointer; padding:8px; font-size:1.05rem; color:var(--dark-green); position:relative; }
+.icon-btn{ background:none; border:none; cursor:pointer; padding:8px; font-size:1.05rem; color:var(--dark-green); position:relative; display:inline-flex; align-items:center; gap:8px; }
 .icon-badge{ position:absolute; top:-6px; right:-6px; background:var(--dark-green); color:#fff; width:18px; height:18px; display:flex; align-items:center; justify-content:center; border-radius:10px; font-size:0.7rem; }
 
 /* profile dropdown in green header */
-.profile-wrap{ position:relative; display:inline-block; }
+.profile-wrap{ position:relative; display:inline-block; margin-right:6px; }
 .profile-label{ font-weight:700; color:var(--dark-green); padding:6px 8px; border-radius:6px; cursor:default; }
 .profile-dropdown{
   position:absolute; right:0; top:calc(100% + 8px);
-  background:#fff; border-radius:8px; padding:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); min-width:180px;
+  background:#fff; border-radius:8px; padding:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); min-width:220px;
   display:none;
 }
-.profile-dropdown.visible{ display:block; }
+/* keep dropdown visible more easily */
+.profile-dropdown.visible, .profile-dropdown.visible-hover { display:block !important; }
 
-/* top nav (white bar) - follows under header - no profile/cart icons here */
+/* top nav (white bar) - centered nav links */
 .top-nav{
   position:sticky;
   top:var(--header-height);
@@ -61,19 +63,39 @@ header{
   border-bottom: 1px solid rgba(0,0,0,0.04);
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:center;
   padding:8px 18px;
 }
-.nav-links{ display:flex; gap:18px; align-items:center; list-style:none; }
+.nav-links{ display:flex; gap:18px; align-items:center; list-style:none; justify-content:center; }
 .nav-links a, .nav-links .nav-heading { text-decoration:none; color:var(--dark-green); font-weight:700; padding:8px 8px; border-radius:6px; display:inline-block; }
 .nav-links a:hover, .nav-links .nav-heading:hover { background:rgba(46,122,50,0.06); }
 
-/* languages dropdown (top nav): hover shows submenu; we also improve hover-stability via JS timer */
-.nav-item { position:relative; }
+/* products dropdown */
+.products-submenu {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:calc(100% + 8px);
+  background:#fff;
+  border:1px solid #eee;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  padding:8px;
+  border-radius:8px;
+  display:none;
+  min-width:220px;
+}
+.products-submenu.visible-hover { display:block !important; }
+.products-submenu li{ list-style:none; padding:6px 8px; }
+.products-submenu a{ display:block; text-decoration:none; color:var(--dark-green); padding:6px 8px; border-radius:6px; }
+.products-submenu a:hover{ background:rgba(46,122,50,0.06); }
+
+/* languages dropdown */
+.nav-item { position:relative; padding:4px 0; }
 .languages-submenu {
   position:absolute;
-  left:0;
-  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  top:calc(100% + 6px);
   background:#fff;
   border:1px solid #eee;
   box-shadow:0 8px 20px rgba(0,0,0,0.06);
@@ -82,7 +104,7 @@ header{
   display:none;
   min-width:170px;
 }
-.languages-submenu.visible-hover { display:block !important; } /* used by JS */
+.languages-submenu.visible-hover { display:block !important; }
 .languages-submenu li{ list-style:none; display:flex; align-items:center; gap:10px; padding:8px; cursor:pointer; border-radius:6px; }
 .languages-submenu li:hover { background:rgba(46,122,50,0.06); }
 
@@ -115,7 +137,10 @@ section{ padding:64px 20px; max-width:1200px; margin:0 auto; }
 .product-card img{ width:100%; border-radius:8px; margin-bottom:10px; display:block; }
 .product-card h3{ font-size:1.15rem; color:var(--dark-green); margin-bottom:8px; font-family:"Playfair Display",serif; }
 .product-card p{ color:#555; margin-bottom:12px; }
-.btn{ display:inline-block; padding:8px 12px; background:var(--green); color:#fff; text-decoration:none; border-radius:8px; }
+.btn{ display:inline-block; padding:8px 12px; background:var(--green); color:#fff; text-decoration:none; border-radius:8px; cursor:pointer; border:none; }
+
+/* small label for discount */
+.discount-badge{ display:inline-block; background:#e6f4ea; color:var(--dark-green); padding:6px 8px; border-radius:8px; font-weight:700; margin-left:8px; }
 
 /* contact form */
 .contact{ text-align:center; }
@@ -144,6 +169,7 @@ button[type="submit"]{ padding:12px; border-radius:8px; border:none; background:
   .nav-links{ display:none; }
   .top-nav{ display:none; }
   .hamburger{ display:block; }
+  .hero{ padding-top: calc(var(--header-height) + 12px); align-items:center; text-align:center; }
 }
 @media (min-width:981px){
   .hamburger{ display:none; }
@@ -155,13 +181,12 @@ button[type="submit"]{ padding:12px; border-radius:8px; border:none; background:
 .fade-on-scroll{ opacity:0; transform:translateY(18px); transition: all .6s ease; }
 .fade-on-scroll.visible{ opacity:1; transform:translateY(0); }
 
-/* hide-top toggles */
-.logo-jp, .hero h1, .hero p { transition: opacity .28s ease, transform .28s ease; }
-body.hide-top .logo-jp,
+/* hide-top toggles (logo excluded so it does not fade) */
+.hero h1, .hero p { transition: opacity .28s ease, transform .28s ease; }
 body.hide-top .hero h1,
-body.hide-top .hero p { opacity: 0; transform: translateY(-8px); pointer-events:none; }
+body.hide-top .hero p { opacity: 0; transform:translateY(-8px); pointer-events:none; }
 
-/* mobile slide-in menu (left/right) */
+/* mobile slide-in menu */
 .site-menu{
   position:fixed; top:0; right:-360px; width:360px; height:100%;
   background: linear-gradient(180deg,#ffffff 0%, var(--light-green) 100%);
